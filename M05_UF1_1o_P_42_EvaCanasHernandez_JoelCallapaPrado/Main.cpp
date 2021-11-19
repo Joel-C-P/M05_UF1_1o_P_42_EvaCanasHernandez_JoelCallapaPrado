@@ -84,4 +84,104 @@ void RellenarMapa()
 	map_points++;
 
 
+
+	void Inputs() {
+		char input_raw;
+		cin >> input_raw;
+		int newPos_X;
+		int newPos_Y;
+		switch (input_raw)
+		{
+		case 'W':
+		case 'w':
+			input = USER_INPUTS::UP;
+			break;
+		case 'A':
+		case 'a':
+			input = USER_INPUTS::LEFT;
+			break;
+		case 'S':
+		case 's':
+			input = USER_INPUTS::DOWN;
+			break;
+		case 'D':
+		case 'd':
+			input = USER_INPUTS::RIGHT;
+			break;
+		case 'Q':
+		case 'q':
+			input = USER_INPUTS::QUIT;
+			break;
+		default:
+			input = USER_INPUTS::NONE;
+			break;
+
+		}
+
+	}
+	void Logica()
+	{
+		int personaje_y_new = personaje_y;
+		int personaje_x_new = personaje_x;
+		switch (input)
+		{
+		case NONE:
+			break;
+		case UP:
+			personaje_y_new--;
+			break;
+		case DOWN:
+			personaje_y_new++;
+			break;
+		case RIGHT:
+			personaje_x_new++;
+			break;
+		case LEFT:
+			personaje_x_new--;
+			break;
+		case QUIT:
+			run = false;
+			break;
+
+		}
+		//Condisional para transportal al personaje al lado contrario del mapa
+		if (personaje_x_new < 0) {
+			personaje_x_new = CONSOLE_WIDTH - 1;
+		}
+		personaje_x_new %= CONSOLE_WIDTH;
+		if (ConsoleScreen[personaje_y_new][personaje_x_new] == MAP_TILES::WALL) {
+			personaje_y_new = personaje_y;
+			personaje_x_new = personaje_x;
+		}
+		//Condicional para obtención de puntos 
+		else if (ConsoleScreen[personaje_y_new][personaje_x_new] == MAP_TILES::POINT) {
+			map_points--;
+			personaje_points++;
+			//Con está linea lograremos hacer desaparecer a los puntos
+			(ConsoleScreen[personaje_y_new][personaje_x_new]) = MAP_TILES::EMPTY;
+		}
+
+		personaje_y = personaje_y_new;
+		personaje_x = personaje_x_new;
+	}
+
+
+	void ImprimirPantalla() {
+		system("CLS");
+		for (int i = 0; i < CONSOLE_HEIGHT; i++)
+		{
+			for (int j = 0; j < CONSOLE_WIDTH; j++)
+			{
+				if (personaje_x == j && personaje_y == i)
+				{
+					cout << personaje;
+				}
+				else
+				{
+					cout << (char)ConsoleScreen[i][j];
+				}
+			}
+			cout << endl;
+		}
+	}
 }
