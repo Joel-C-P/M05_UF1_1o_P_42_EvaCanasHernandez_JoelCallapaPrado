@@ -65,7 +65,7 @@ void RellenarMapa()
 	}
 
 
-    //Cordenadas de la parte del muro donde podremos pasar de un lado a otro
+	//Cordenadas de la parte del muro donde podremos pasar de un lado a otro
 	ConsoleScreen[2][0] = MAP_TILES::EMPTY;
 	ConsoleScreen[3][0] = MAP_TILES::EMPTY;
 	ConsoleScreen[2][CONSOLE_WIDTH - 1] = MAP_TILES::EMPTY;
@@ -84,7 +84,7 @@ void RellenarMapa()
 	map_points++;
 
 
-
+}
 	void Inputs() {
 		char input_raw;
 		cin >> input_raw;
@@ -184,4 +184,3 @@ void RellenarMapa()
 			cout << endl;
 		}
 	}
-}
