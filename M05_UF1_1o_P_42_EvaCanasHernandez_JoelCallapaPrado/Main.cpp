@@ -8,4 +8,10 @@ void RellenarMapa();
 void Inputs();
 void Logica();
 
+enum MAP_TILES { EMPTY = ' ', WALL = '#', POINT = '.' };
 
+//Los botones que darán el movimiento
+enum USER_INPUTS { NONE, UP, RIGHT, QUIT, LEFT, DOWN };
+
+//Caractares para imprimir en consola
+MAP_TILES ConsoleScreen[CONSOLE_HEIGHT][CONSOLE_WIDTH];
