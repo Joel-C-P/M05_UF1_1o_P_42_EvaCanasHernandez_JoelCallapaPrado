@@ -56,6 +56,10 @@ void RellenarMapa()
 
 	}
 
+	ConsoleScreen[2][0] = MAP_TILES::EMPTY;
+	ConsoleScreen[3][0] = MAP_TILES::EMPTY;
+	ConsoleScreen[2][CONSOLE_WIDTH - 1] = MAP_TILES::EMPTY;
+	ConsoleScreen[3][CONSOLE_WIDTH - 1] = MAP_TILES::EMPTY;
 
 
 
