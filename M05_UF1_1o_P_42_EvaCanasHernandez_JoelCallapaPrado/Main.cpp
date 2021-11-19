@@ -24,6 +24,13 @@ int personaje_y = 5;
 int personaje_points = 0;
 int map_points = 0;
 
+
+
+USER_INPUTS input = USER_INPUTS::NONE;
+bool run = true;
+int personaje_y_new = personaje_y;
+int personaje_x_new = personaje_x;
+
 int main()
 {
 	RellenarMapa();
