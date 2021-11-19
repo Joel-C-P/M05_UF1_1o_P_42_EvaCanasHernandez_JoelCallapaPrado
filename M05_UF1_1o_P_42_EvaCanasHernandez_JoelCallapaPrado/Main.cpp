@@ -31,6 +31,7 @@ bool run = true;
 int personaje_y_new = personaje_y;
 int personaje_x_new = personaje_x;
 
+//Clase donde llamare a las variables
 int main()
 {
 	RellenarMapa();
@@ -63,13 +64,24 @@ void RellenarMapa()
 
 	}
 
+
+    //Cordenadas de la parte del muro donde podremos pasar de un lado a otro
 	ConsoleScreen[2][0] = MAP_TILES::EMPTY;
 	ConsoleScreen[3][0] = MAP_TILES::EMPTY;
 	ConsoleScreen[2][CONSOLE_WIDTH - 1] = MAP_TILES::EMPTY;
 	ConsoleScreen[3][CONSOLE_WIDTH - 1] = MAP_TILES::EMPTY;
 
-
-
+	//Cordenadas donde los puntos estarán ubicados 
+	ConsoleScreen[2][0] = MAP_TILES::POINT;
+	map_points++;
+	ConsoleScreen[2][1] = MAP_TILES::POINT;
+	map_points++;
+	ConsoleScreen[2][2] = MAP_TILES::POINT;
+	map_points++;
+	ConsoleScreen[2][3] = MAP_TILES::POINT;
+	map_points++;
+	ConsoleScreen[2][4] = MAP_TILES::POINT;
+	map_points++;
 
 
 }
