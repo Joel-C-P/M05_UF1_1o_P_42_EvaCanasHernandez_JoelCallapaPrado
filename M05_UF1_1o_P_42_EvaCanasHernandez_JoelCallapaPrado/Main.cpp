@@ -23,3 +23,14 @@ int personaje_x = 10;
 int personaje_y = 5;
 int personaje_points = 0;
 int map_points = 0;
+
+int main()
+{
+	RellenarMapa();
+	while (run) {
+		Inputs();
+		ImprimirPantalla();
+		Logica();
+	}
+
+}
